@@ -15,6 +15,13 @@ public class InputTest : MonoBehaviour
     public Transform mEmitPoint;
     public float mMinHitDistance;
     public Bullet bullet;
+    public int getPoint = 0;
+    void OnTriggerEnter(Collider other)
+    {
+        Destroy(other.gameObject);
+        getPoint++;
+        Debug.Log($"get point{getPoint}");
+    }
     void Start()
     {
 
@@ -49,7 +56,7 @@ public class InputTest : MonoBehaviour
 
         //vForH.y = 0.0f;
         //float fAngle = Vector3.Angle(vFor, vForH);
-        Debug.Log("Agngle" + fCurrentRoateAngle);
+        //Debug.Log("Agngle" + fCurrentRoateAngle);
         //if (fAngle > 45) 
         //{
         //    m_Camera.transform.forward = transform.forward;
